@@ -10,18 +10,101 @@ namespace Yoast\PHPUnitPolyfills\TestCases;
  */
 abstract class TestCase
 {
+    /**
+     * Assert $bool is true
+     * @param boolean $bool the value to check
+     * @param string $message optional message to show if assertion fails.
+     */
     public function assertTrue($bool, $message = '') {}
+
+    /**
+     * Assert $bool is false
+     * @param boolean $bool the value to check
+     * @param string $message optional message to show if assertion fails.
+     */
     public function assertFalse($bool, $message = '') {}
+
+    /**
+     * Compare $expected with $actual using '==='
+     * @param mixed $expected value
+     * @param mixed $actual the value to check
+     * @param string $message optional message to show if assertion fails.
+     */
     public function assertSame($expected, $actual, $message = '') {}
-    public function assertEmpty($var, $message = '') {}
-    public function assertNotEmpty($var, $message = '') {}
-    public function assertNull($var, $message = '') {}
-    // public function assertNotNull($var, $message = '') {}
-    public function assertCount($expected, $countable, $message = '') {}
-    public function assertContains($needle, $hay_rray, $message = '') {}
-    public function assertNotContains($needle, $hay_rray, $message = '') {}
-    public function assertStringContainsString($needle, $haystack, $message = '') {}
-    public function assertStringNotContainsString($needle, $haystack, $message = '') {}
+
+    /**
+     * Check $actual via isEmpty
+     * @param mixed $actual the value to check
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertEmpty($actual, $message = '') {}
+
+    /**
+     * Check $actual via !isEmpty
+     * @param mixed $actual the value to check
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertNotEmpty($actual, $message = '') {}
+
+    /**
+     * Check $actual via isNull
+     * @param mixed $actual the value to check
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertNull($actual, $message = '') {}
+
+    /**
+     * Assert $actual_countable is of size $expected
+     * @param mixed $expected count
+     * @param mixed $actual_countable a countable
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertCount($expected, $actual_countable, $message = '') {}
+
+    /**
+     * Check if $actual_array contains $desired
+     * @param mixed $desired item
+     * @param mixed $actual_array
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertContains($desired, $actual_array, $message = '') {}
+
+    /**
+     * Check that $actual_array does not contain $undesired
+     * @param mixed $undesired item
+     * @param mixed $actual_array
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertNotContains($undesired, $actual_array, $message = '') {}
+
+    /**
+     * Check that $actual contains $desired
+     * @param string $desired item
+     * @param string $actual
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertStringContainsString($desired, $actual, $message = '') {}
+
+    /**
+     * Check that $actual does not contain $undesired
+     * @param string $undesired item
+     * @param string $actual
+     * @param string $message optional message to show if assertion fails.
+     */
+    public function assertStringNotContainsString($undesired, $actual, $message = '') {}
+
+    /**
+     * Assert that $actual is an array
+     * @param mixed $actual the value to check
+     * @param string $message optional message to show if assertion fails.
+     */
     public function assertIsArray($actual, $message = '') {}
+
+    /**
+     * Check if $actual contains $desired_key
+     * @param string $desired_key
+     * @param mixed $actual
+     * @param string $message optional message to show if assertion fails.
+     */
     public function assertArrayHasKey($desired_key, $actual, $message = '') {}
 }
