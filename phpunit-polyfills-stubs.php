@@ -107,4 +107,44 @@ abstract class TestCase
      * @param string $message optional message to show if assertion fails.
      */
     public function assertArrayHasKey($desired_key, $actual, $message = '') {}
+
+    /**
+     * Start building mock for a class
+     * @param string $class_fqdn
+     * @return PHPUnit_Framework_MockBuilder
+     */
+    public function getMockBuilder($class_fqdn) {}
+
+    /**
+     * invoke any number of times
+     * @return PHPUnit_Framework_MockObject_Matcher_InvokedCount
+     */
+    public function any() {}
+    /**
+     * invoke once
+     * @return PHPUnit_Framework_MockObject_Matcher_InvokedCount
+     */
+    public function once() {}
+    /**
+     * invoke never
+     * @return PHPUnit_Framework_MockObject_Matcher_InvokedCount
+     */
+    public function never() {}
+    /**
+     * invoke exactly X times
+     * @param number $times
+     * @return PHPUnit_Framework_MockObject_Matcher_InvokedCount
+     */
+    public function exactly($times) {}
+    /**
+     * invoke at least once
+     * @return PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastOnce
+     */
+    public function atLeastOnce() {}
+    /**
+     * invoke when the method it is evaluated for is invoked at the given $index
+     * @param number $index
+     * @return PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex
+     */
+    public function at($index) {}
 }
