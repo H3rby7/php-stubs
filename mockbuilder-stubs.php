@@ -42,7 +42,7 @@ abstract class PHPUnit_Framework_MockObject
 
     /**
      * Define return $value for the mock invocation
-     * @param mixed $value expected
+     * @param PHPUnit_Framework_MockObject_ReturnValue $value to return
      */
     public function will($value) {}
 }
@@ -51,3 +51,4 @@ abstract class PHPUnit_Framework_MockObject_Matcher {}
 class PHPUnit_Framework_MockObject_Matcher_InvokedCount extends PHPUnit_Framework_MockObject_Matcher {}
 class PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastOnce extends PHPUnit_Framework_MockObject_Matcher {}
 class PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex extends PHPUnit_Framework_MockObject_Matcher {}
+class PHPUnit_Framework_MockObject_ReturnValue {}

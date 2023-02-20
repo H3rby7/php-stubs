@@ -147,4 +147,11 @@ abstract class TestCase
      * @return PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex
      */
     public function at($index) {}
+    
+    /**
+     * Generate a return value for @see PHPUnit_Framework_MockObject
+     * @param mixed $value to return
+     * @return PHPUnit_Framework_MockObject_ReturnValue
+     */
+    public function returnValue($value) {}
 }
