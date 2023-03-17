@@ -10,6 +10,15 @@ namespace Yoast\PHPUnitPolyfills\TestCases;
  */
 abstract class TestCase
 {
+
+    /**
+     * SetUp Function
+     */
+    protected function setUp(): void {}
+    /**
+     * TearDown Function
+     */
+    protected function tearDown(): void {}
     /**
      * Assert $bool is true
      * @param boolean $bool the value to check
@@ -109,6 +118,34 @@ abstract class TestCase
     public function assertArrayHasKey($desired_key, $actual, $message = '') {}
 
     /**
+     * Register we expect an exception.
+     * @see https://phpunit.de/manual/6.5/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.exceptions
+     * @param string $exception_fqdn
+     */
+    public function expectException($expected_exception_fqdn) {}
+
+    /**
+     * Assert the exception to have the $excepted_code
+     * @see https://phpunit.de/manual/6.5/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.exceptions
+     * @param int $excepted_code
+     */
+    public function expectExceptionCode($excepted_code) {}
+
+    /**
+     * Assert the exception message to contain the $expected_message
+     * @see https://phpunit.de/manual/6.5/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.exceptions
+     * @param string $expected_message_regex
+     */
+    public function expectExceptionMessage($expected_message) {}
+
+    /**
+     * Assert the exception message to match the $expected_message_regex
+     * @see https://phpunit.de/manual/6.5/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.exceptions
+     * @param string $expected_message_regex
+     */
+    public function expectExceptionMessageRegExp($expected_message_regex) {}
+
+    /**
      * Start building mock for a class
      * @param string $class_fqdn
      * @return PHPUnit_Framework_MockBuilder
@@ -154,4 +191,15 @@ abstract class TestCase
      * @return PHPUnit_Framework_MockObject_ReturnValue
      */
     public function returnValue($value) {}
+
+    /**
+     * Provide a function to run complex validations on input.
+     * The $callable will be called with exactly one argument, which is the argument the mock was called with.
+     * 
+     * @param callable $callable function to validate mock input
+     * @return boolean true if valid; false if invalid
+     * 
+     * @see https://docs.phpunit.de/en/9.5/test-doubles.html#test-doubles-mock-objects-examples-subjecttest3-php
+     */
+    public function callback($callable) {}
 }

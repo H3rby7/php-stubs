@@ -10,6 +10,12 @@
 abstract class PHPUnit_Framework_MockBuilder
 {
     /**
+     * Disable the call to the original class’ constructor
+     * @return PHPUnit_Framework_MockBuilder
+     */
+    public function disableOriginalConstructor() {}
+
+    /**
      * Define the methods that will be mocked
      * @param array $methods to mock
      * @return PHPUnit_Framework_MockBuilder
